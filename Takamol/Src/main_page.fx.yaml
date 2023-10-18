@@ -1,0 +1,357 @@
+main_page As screen:
+    LoadingSpinnerColor: =RGBA(107, 31, 92, 100)
+
+    Header_Container As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(107, 31, 92, 1)
+        Height: =80
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Label1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Ticket Management System"
+            Width: =1356
+            X: =10
+            ZIndex: =1
+
+        Image1 As image:
+            Height: =56
+            Image: ='Screenshot 2023-09-20 163103'
+            ImagePosition: =ImagePosition.Fill
+            Width: =212
+            X: =10
+            Y: =17
+            ZIndex: =2
+
+        Icon1 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Icon: =Icon.Add
+            OnSelect: =Navigate(Create_Ticket,ScreenTransition.Fade)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =58
+            X: =1293
+            Y: =17
+            ZIndex: =3
+
+    Container2 As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height-Self.Y
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =1366
+        Y: =80
+        ZIndex: =2
+
+        Filter_Container As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(232, 216, 229, 0.35)
+            Height: =Parent.Height-Self.Y
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width*.23
+            Y: =Card_Container.Height
+            ZIndex: =2
+
+            Gallery7 As gallery.variableTemplateHeightGallery:
+                DelayItemLoading: =true
+                Height: =550.4
+                Items: =col_TicketTypes
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                LoadingSpinnerColor: =RGBA(107, 31, 92, 100)
+                TemplateSize: =Button9.Height+Button9.Y
+                Width: =314.18
+                ZIndex: =1
+
+                Button9 As button:
+                    Align: =Align.Left
+                    BorderThickness: =0
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =60
+                    HoverColor: =RGBA(191, 113, 177, 1)
+                    HoverFill: =
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =30
+                    PressedColor: =RGBA(166, 166, 166, 1)
+                    PressedFill: =RGBA(107, 31, 92, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Text: =ThisItem.Ticket_Type
+                    Width: =399.8
+                    ZIndex: =1
+
+                Icon2 As icon.ArrowRight:
+                    BorderColor: =RGBA(107, 31, 92, 1)
+                    Color: =RGBA(107, 31, 92, 0.62)
+                    Height: =Parent.TemplateHeight-25
+                    HoverBorderColor: =RGBA(107, 31, 92, 1)
+                    HoverColor: =RGBA(107, 31, 92, 1)
+                    Icon: =Icon.ChevronRight
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Width: =Parent.TemplateHeight-25
+                    X: =Parent.Width-Self.Width
+                    Y: =Button9.Height/2-Self.Height/2
+                    ZIndex: =2
+
+                Rectangle1 As rectangle:
+                    Fill: =RGBA(107, 31, 92, 1)
+                    Height: =2
+                    OnSelect: =Parent.Width
+                    Width: =Parent.Width
+                    Y: =58
+                    ZIndex: =3
+
+        Gallery_Container As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 240, 251, 0.41)
+            Height: =Parent.Height-Self.Y
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width*.77
+            X: =Filter_Container.Width
+            Y: =Card_Container.Height
+            ZIndex: =3
+
+            Gallery1 As gallery.variableTemplateHeightGallery:
+                DelayItemLoading: =true
+                Height: =Parent.Height
+                Items: =col_Tickets
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                LoadingSpinnerColor: =RGBA(107, 31, 92, 100)
+                TemplatePadding: =0
+                TemplateSize: =HtmlText2.Y+HtmlText2.Height
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Label2 As label:
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =20
+                    Text: |-
+                        ="Ticket ID: "&ThisItem.ID
+                    Width: =169
+                    Y: =5
+                    ZIndex: =1
+
+                Label2_1 As label:
+                    OnSelect: =Select(Parent)
+                    Text: |-
+                        ="Created BY: "&ThisItem.Owner
+                    Width: =381
+                    X: =169
+                    Y: =5
+                    ZIndex: =2
+
+                Label2_2 As label:
+                    OnSelect: =Select(Parent)
+                    Text: |-
+                        ="Priority : "&ThisItem.Priority
+                    Width: =221
+                    X: =550
+                    Y: =5
+                    ZIndex: =3
+
+                Label2_4 As label:
+                    OnSelect: =Select(Parent)
+                    Text: |-
+                        ="Created On: "& Text(ThisItem.Date_Created,DateTimeFormat.ShortDate)
+                    Width: =280.81999999999994
+                    X: =771
+                    Y: =5
+                    ZIndex: =5
+
+                Label2_3 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =60
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =20
+                    Size: =24
+                    Text: |-
+                        ="Subject : "&ThisItem.Subject
+                    Width: =Parent.Width
+                    Y: =47
+                    ZIndex: =6
+
+                Label2_5 As label:
+                    Height: =100
+                    OnSelect: =Select(Parent)
+                    Overflow: =Overflow.Scroll
+                    PaddingLeft: =20
+                    PaddingTop: =20
+                    Size: =15
+                    Text: |-
+                        ="Description : "&ThisItem.Description
+                    Width: =Parent.Width-40
+                    Y: =99
+                    ZIndex: =7
+
+                HtmlText2 As htmlViewer:
+                    HtmlText: |-
+                        ="Assigned to: <b>"& ThisItem.Assigned_To& "</b>"
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =20
+                    Size: =16
+                    Width: =Parent.Width
+                    Y: =195
+                    ZIndex: =8
+
+                Rectangle3 As rectangle:
+                    Fill: |
+                        =Switch(ThisItem.Status,
+                        "New", RGBA(0,134,208,1),
+                        "In Progress", RGBA(255,191,0,1),
+                        "Closed", RGBA(54,176,75,1),
+                        "On hold", Color.Red
+                        )
+                    Height: =Parent.TemplateHeight-Self.Y*2
+                    OnSelect: =Select(Parent)
+                    Width: =5
+                    Y: =10
+                    ZIndex: =9
+
+                Rectangle6 As rectangle:
+                    Fill: =RGBA(107, 31, 92, 1)
+                    Height: =3
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.Width
+                    Y: =Parent.TemplateHeight-Self.Height
+                    ZIndex: =10
+
+                Icon3 As icon.NextArrow:
+                    Color: =RGBA(107, 31, 92, 0.62)
+                    Height: =30
+                    HoverBorderColor: =RGBA(107, 31, 92, 1)
+                    HoverColor: =RGBA(107, 31, 92, 1)
+                    Icon: =Icon.ChevronRight
+                    OnSelect: |-
+                        =Set(varID,ThisItem.ID);
+                        Set(varCreatedDate,ThisItem.Date_Created);
+                        Set(varCreatedBy,ThisItem.Owner);
+                        Set(varCloseDate,ThisItem.Date_Closed);
+                        Set(varSubject,ThisItem.Subject);
+                        Set(varDescription,ThisItem.Description);
+                        Set(varPriority,ThisItem.Priority);
+                        Set(varDepartment,ThisItem.Department);
+                        Set(varStatus,ThisItem.Status);
+                        Set(varAssignedTo,ThisItem.Assigned_To);
+                        Navigate(Ticket_overview,ScreenTransition.Fade);
+                    Width: =30
+                    X: =Parent.Width-Self.Width - 10
+                    Y: =103
+                    ZIndex: =11
+
+        Card_Container As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =Parent.Height*.20
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            Y: =Parent.Height/2-Self.Height/2-275
+            ZIndex: =4
+
+            Button1 As button:
+                Fill: =RGBA(107, 31, 92, 0.66)
+                Height: =110
+                HoverBorderColor: =Self.Fill
+                HoverFill: =Self.Fill
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =Self.Fill
+                Text: |-
+                    =CountRows(col_Tickets)&Char(10)&
+                    "All Tikets"
+                Width: =Parent.Width/5 - Parent.Width*.024
+                X: =Parent.Width*.018
+                Y: =Parent.Height/2-Self.Height/2
+                ZIndex: =1
+
+            Button1_3 As button:
+                Fill: =RGBA(107, 31, 92, 0.66)
+                Height: =110
+                HoverBorderColor: =Self.Fill
+                HoverFill: =Self.Fill
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =Self.Fill
+                Text: |-
+                    =CountRows(Filter(col_Tickets,Status="New"))&Char(10)&
+                    "New Tikets "
+                Width: =Parent.Width/5 - Parent.Width*.024
+                X: =Parent.Width*.21
+                Y: =15
+                ZIndex: =4
+
+            Button1_4 As button:
+                Fill: =RGBA(107, 31, 92, 0.66)
+                Height: =110
+                HoverBorderColor: =Self.Fill
+                HoverFill: =Self.Fill
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =Self.Fill
+                Text: |-
+                    =CountRows(Filter(col_Tickets,Status="In Progress"))&Char(10)&
+                    "In Progress"
+                Width: =Parent.Width/5 - Parent.Width*.024
+                X: =Parent.Width*.41
+                Y: =15
+                ZIndex: =5
+
+            Button1_1 As button:
+                Fill: =RGBA(107, 31, 92, 0.66)
+                Height: =110
+                HoverBorderColor: =Self.Fill
+                HoverFill: =Self.Fill
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =Self.Fill
+                Text: |-
+                    =CountRows(Filter(col_Tickets,Status="On Hold"))&Char(10)&
+                    "On Hold"
+                Width: =Parent.Width/5 - Parent.Width*.024
+                X: =Parent.Width*.81
+                Y: =15
+                ZIndex: =6
+
+            Button1_5 As button:
+                Fill: =RGBA(107, 31, 92, 0.66)
+                Height: =110
+                HoverBorderColor: =Self.Fill
+                HoverFill: =Self.Fill
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =Self.Fill
+                Text: |-
+                    =CountRows(Filter(col_Tickets,Status="Closed"))&Char(10)&
+                    "Closed"
+                Width: =Parent.Width/5 - Parent.Width*.024
+                X: =Parent.Width*.61
+                Y: =15
+                ZIndex: =7
+
+            Rectangle2 As rectangle:
+                Fill: =RGBA(107, 31, 92, 1)
+                Height: =2
+                Width: =1366
+                Y: =Parent.Height-Self.Height
+                ZIndex: =8
+

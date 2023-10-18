@@ -1,0 +1,305 @@
+Create_Ticket As screen:
+
+    Header_Container_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(107, 31, 92, 1)
+        Height: =80
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'Create new ticket' As label":
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Ticket Management System - Create new Ticket"
+            Width: =1356
+            X: =10
+            ZIndex: =1
+
+        "'xebia logo' As image":
+            Height: =56
+            Image: ='Screenshot 2023-09-20 163103'
+            ImagePosition: =ImagePosition.Fill
+            Width: =212
+            X: =10
+            Y: =17
+            ZIndex: =2
+
+        back As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Icon: =Icon.Cancel
+            OnSelect: =Back(ScreenTransition.Fade)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =58
+            X: =1293
+            Y: =17
+            ZIndex: =3
+
+    Card_Container_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =Parent.Height*.20
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        Y: =80
+        ZIndex: =2
+
+        Button1_2 As button:
+            Fill: =RGBA(107, 31, 92, 0.66)
+            Height: =110
+            HoverBorderColor: =Self.Fill
+            HoverFill: =Self.Fill
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =Self.Fill
+            Text: ="All Tikets"
+            Width: =Parent.Width/5 - Parent.Width*.024
+            X: =34
+            Y: =15
+            ZIndex: =1
+
+        Button1_6 As button:
+            Fill: =RGBA(107, 31, 92, 0.66)
+            Height: =110
+            HoverBorderColor: =Self.Fill
+            HoverFill: =Self.Fill
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =Self.Fill
+            Text: ="New Tikets "
+            Width: =Parent.Width/5 - Parent.Width*.024
+            X: =302
+            Y: =15
+            ZIndex: =4
+
+        Button1_7 As button:
+            Fill: =RGBA(107, 31, 92, 0.66)
+            Height: =110
+            HoverBorderColor: =Self.Fill
+            HoverFill: =Self.Fill
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =Self.Fill
+            Text: ="In Progress"
+            Width: =Parent.Width/5 - Parent.Width*.024
+            X: =570
+            Y: =15
+            ZIndex: =5
+
+        Button1_9 As button:
+            Fill: =RGBA(107, 31, 92, 0.66)
+            Height: =110
+            HoverBorderColor: =Self.Fill
+            HoverFill: =Self.Fill
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =Self.Fill
+            Text: ="On Hold"
+            Width: =Parent.Width/5 - Parent.Width*.024
+            X: =1105
+            Y: =15
+            ZIndex: =6
+
+        Button1_8 As button:
+            Fill: =RGBA(107, 31, 92, 0.66)
+            Height: =110
+            HoverBorderColor: =Self.Fill
+            HoverFill: =Self.Fill
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =Self.Fill
+            Text: ="Closed"
+            Width: =Parent.Width/5 - Parent.Width*.024
+            X: =838
+            Y: =15
+            ZIndex: =7
+
+        Rectangle2_1 As rectangle:
+            Fill: =RGBA(107, 31, 92, 1)
+            Height: =2
+            Width: =1366
+            Y: =Parent.Height-Self.Height
+            ZIndex: =8
+
+    Created_by As label:
+        Size: =16
+        Text: |-
+            ="Created By : *"
+        Width: =Parent.Width-800
+        X: =50
+        Y: =266
+        ZIndex: =3
+
+    Prior As label:
+        Size: =16
+        Text: |-
+            ="Priority : *"
+        Width: =Parent.Width-800
+        X: =50
+        Y: =507
+        ZIndex: =4
+
+    dep As label:
+        Size: =16
+        Text: |-
+            ="Department : *"
+        Width: =Parent.Width-800
+        X: =50
+        Y: =385
+        ZIndex: =5
+
+    Des As label:
+        Size: =16
+        Text: |-
+            ="Description : *"
+        Width: =Created_by.Width
+        X: =764
+        Y: =dep.Y
+        ZIndex: =6
+
+    Sub As label:
+        Size: =16
+        Text: |-
+            ="Subject : *"
+        Width: =Created_by.Width
+        X: =764
+        Y: =Created_by.Y
+        ZIndex: =7
+
+    Createdby As text:
+        BorderColor: =RGBA(107, 31, 92, 0.63)
+        Default: =User().FullName
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =2
+        Height: =50
+        HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Width: =Parent.Width-800
+        X: =50
+        Y: =306
+        ZIndex: =8
+
+    Subject As text:
+        BorderColor: =RGBA(107, 31, 92, 0.63)
+        Default: =""
+        FocusedBorderThickness: =2
+        Height: =50
+        HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Reset: =true
+        Width: =Parent.Width-800
+        X: =764
+        Y: =Createdby.Y
+        ZIndex: =9
+
+    Description As text:
+        BorderColor: =RGBA(107, 31, 92, 0.63)
+        Default: =""
+        FocusedBorderThickness: =2
+        Height: =178
+        HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Mode: =TextMode.MultiLine
+        Reset: =true
+        Width: =Parent.Width-800
+        X: =764
+        Y: =Department.Y
+        ZIndex: =10
+
+    Department As dropdown:
+        BorderColor: =RGBA(107, 31, 92, 0.63)
+        ChevronBackground: =RGBA(107, 31, 92, 1)
+        ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+        Default: =""
+        FocusedBorderThickness: =2
+        Height: =50
+        HoverFill: =RGBA(219, 184, 212, 0.64)
+        Items: |-
+            =
+                ["","Human Resource","Administrator","Finance","IT","Recruitment Operations"]
+        OnChange: =true
+        PressedFill: =RGBA(107, 31, 92, 0.63)
+        Reset: =true
+        SelectionFill: =RGBA(107, 31, 92, 1)
+        Width: =Parent.Width-800
+        X: =50
+        Y: =426
+        ZIndex: =11
+
+    Priority As dropdown:
+        BorderColor: =RGBA(107, 31, 92, 0.63)
+        ChevronBackground: =RGBA(107, 31, 92, 1)
+        ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+        Default: =""
+        FocusedBorderThickness: =2
+        Height: =50
+        HoverFill: =RGBA(219, 184, 212, 0.64)
+        Items: =["","Low","Medium","High"]
+        PressedFill: =RGBA(107, 31, 92, 0.63)
+        Reset: =true
+        SelectionFill: =RGBA(107, 31, 92, 1)
+        Width: =Parent.Width-800
+        X: =50
+        Y: =547
+        ZIndex: =12
+
+    Button_container As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =60
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        Y: =660
+        ZIndex: =13
+
+        Button3 As button:
+            Fill: =RGBA(207, 54, 54, 1)
+            Height: =Parent.Height
+            HoverFill: =RGBA(128, 34, 34, 1)
+            OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+            PressedColor: =Color.White
+            PressedFill: =RGBA(207, 54, 54, 1)
+            Size: =18
+            Text: ="Close"
+            Width: =Parent.Width*.2
+            X: =765
+            ZIndex: =1
+
+        Button3_1 As button:
+            Height: =Parent.Height
+            OnSelect: |-
+                =Collect(col_Tickets,
+                    {
+                        ID: Last(col_Tickets).ID,
+                        Owner: Created_by.Text,
+                        Subject: Subject.Text,
+                        Priority: Priority.Selected.Value,
+                        Description: Description.Text,
+                        Department: Department.Selected.Value,
+                        Date_Created: Now(),
+                        Status: "New"
+                    }
+                );
+                Notify("Ticket has been created succesfully!",NotificationType.Success);
+                Navigate(main_page,ScreenTransition.Fade);
+                Reset(Department);
+                Reset(Priority);
+                Reset(Description);
+                Reset(Subject);
+            PressedColor: =Color.White
+            PressedFill: =RGBA(56, 96, 178, 1)
+            Size: =18
+            Text: ="Save"
+            Width: =Parent.Width*.2
+            X: =1060
+            ZIndex: =2
+

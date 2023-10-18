@@ -1,0 +1,438 @@
+Ticket_overview As screen:
+
+    Header_Container_2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(107, 31, 92, 1)
+        Height: =80
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Label1_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Ticket Management System"
+            Width: =1356
+            X: =10
+            ZIndex: =1
+
+        Image1_1 As image:
+            Height: =56
+            Image: ='Screenshot 2023-09-20 163103'
+            ImagePosition: =ImagePosition.Fill
+            Width: =212
+            X: =10
+            Y: =17
+            ZIndex: =2
+
+        Icon1_1 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =48
+            Icon: =Icon.Cancel
+            OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =58
+            X: =1293
+            Y: =17
+            ZIndex: =3
+
+    Container2_1 As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height-Self.Y
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =1366
+        Y: =80
+        ZIndex: =2
+
+        Filter_Container_1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(232, 216, 229, 0.35)
+            Height: =Parent.Height-Self.Y
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width*.23
+            Y: =
+            ZIndex: =2
+
+            Label3 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Ticket ID :"
+                Width: =280
+                X: =15
+                Y: =18
+                ZIndex: =1
+
+            Label3_1 As label:
+                Color: =RGBA(107, 31, 92, 0.8)
+                Size: =18
+                Text: =varID
+                Width: =280
+                X: =15
+                Y: =58
+                ZIndex: =2
+
+            Label3_2 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Created Date :"
+                Width: =280
+                X: =15
+                Y: =95
+                ZIndex: =3
+
+            Label3_3 As label:
+                Color: =RGBA(107, 31, 92, 0.8)
+                Size: =18
+                Text: =Text(varCreatedDate,DateTimeFormat.ShortDate)
+                Width: =280
+                X: =15
+                Y: =135
+                ZIndex: =4
+
+            Label3_4 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Closed Date :"
+                Width: =280
+                X: =15
+                Y: =278
+                ZIndex: =5
+
+            Label3_5 As label:
+                Color: =RGBA(107, 31, 92, 0.8)
+                Size: =18
+                Text: =Text(varCloseDate,DateTimeFormat.ShortDate)
+                Width: =280
+                X: =15
+                Y: =318
+                ZIndex: =6
+
+            Label3_6 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Created By :"
+                Width: =280
+                X: =15
+                Y: =185
+                ZIndex: =7
+
+            Label3_7 As label:
+                Color: =RGBA(107, 31, 92, 0.8)
+                Size: =18
+                Text: =varCreatedBy
+                Width: =280
+                X: =15
+                Y: =225
+                ZIndex: =8
+
+        Gallery_Container_1 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 240, 251, 0.41)
+            Height: =Parent.Height-Self.Y
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width*.77
+            X: =Filter_Container_1.Width
+            Y: =
+            ZIndex: =3
+
+            Label3_8 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Subject :"
+                Width: =280
+                X: =10
+                Y: =34
+                ZIndex: =1
+
+            Label3_9 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Description :"
+                Width: =280
+                X: =Parent.Y+10
+                Y: =147
+                ZIndex: =2
+
+            Label3_10 As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Internal Comments :"
+                Width: =280
+                X: =10
+                Y: =275
+                ZIndex: =3
+
+            Description_1 As text:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                Default: =varSubject
+                DisplayMode: =DisplayMode.Disabled
+                FocusedBorderThickness: =2
+                Height: =50
+                HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Mode: =TextMode.MultiLine
+                Size: =15
+                Width: =Parent.Width-20
+                X: =10
+                Y: =78
+                ZIndex: =4
+
+            Description_2 As text:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                Default: =varDescription
+                DisplayMode: =DisplayMode.Disabled
+                FocusedBorderThickness: =2
+                Height: =60
+                HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Mode: =TextMode.MultiLine
+                Size: =15
+                Width: =Parent.Width-20
+                X: =10
+                Y: =187
+                ZIndex: =5
+
+            Comment As text:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                Default: =
+                DisplayMode: =If(varStatus = "Closed",DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderThickness: =2
+                Height: =60
+                HoverBorderColor: =RGBA(107, 31, 92, 0.65)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Mode: =TextMode.MultiLine
+                Size: =15
+                Width: =Parent.Width-20
+                X: =10
+                Y: =315
+                ZIndex: =6
+
+            TicketStatus_drop As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Ticket Status :"
+                Width: =280
+                X: =10
+                Y: =396
+                ZIndex: =7
+
+            Priority_drop As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Priority :"
+                Width: =280
+                X: =10
+                Y: =456
+                ZIndex: =8
+
+            AssignedTodrop As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Assigned to :"
+                Width: =280
+                X: =10
+                Y: =581
+                ZIndex: =9
+
+            Department_drop As label:
+                FontWeight: =FontWeight.Semibold
+                Size: =18
+                Text: |-
+                    ="Department :"
+                Width: =280
+                X: =10
+                Y: =516
+                ZIndex: =10
+
+            Icon1_2 As icon.Add:
+                BorderColor: =RGBA(107, 31, 92, 1)
+                Color: =RGBA(107, 31, 92, 1)
+                Height: =40
+                Icon: =Icon.ChevronRight
+                OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =40
+                X: =1001
+                Y: =396
+                ZIndex: =15
+
+            Icon1_3 As icon.Add:
+                BorderColor: =RGBA(107, 31, 92, 1)
+                Color: =RGBA(107, 31, 92, 1)
+                Height: =40
+                Icon: =Icon.ChevronRight
+                OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =40
+                X: =1001
+                Y: =581
+                ZIndex: =16
+
+            Icon1_4 As icon.Add:
+                BorderColor: =RGBA(107, 31, 92, 1)
+                Color: =RGBA(107, 31, 92, 1)
+                Height: =40
+                Icon: =Icon.ChevronRight
+                OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =40
+                X: =1001
+                Y: =516
+                ZIndex: =17
+
+            Icon1_5 As icon.Add:
+                BorderColor: =RGBA(107, 31, 92, 1)
+                Color: =RGBA(107, 31, 92, 1)
+                Height: =40
+                Icon: =Icon.ChevronRight
+                OnSelect: =Navigate(main_page,ScreenTransition.Fade)
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =40
+                X: =1001
+                Y: =456
+                ZIndex: =18
+
+            Ticket_StatusDrop As dropdown:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                ChevronBackground: =RGBA(107, 31, 92, 1)
+                ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+                Default: =varStatus
+                DisplayMode: =If(varStatus = "Closed",DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderThickness: =2
+                HoverFill: =RGBA(219, 184, 212, 0.64)
+                Items: =["","New","In Progress","Closed","On hold"]
+                PaddingTop: =0
+                PressedFill: =RGBA(107, 31, 92, 0.63)
+                SelectionFill: =RGBA(107, 31, 92, 1)
+                Width: =Parent.Width-400
+                X: =193
+                Y: =396
+                ZIndex: =19
+
+            AssignedToDrop As dropdown:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                ChevronBackground: =RGBA(107, 31, 92, 1)
+                ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+                Default: =varAssignedTo
+                DisplayMode: =If(varStatus = "Closed",DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderThickness: =2
+                HoverFill: =RGBA(219, 184, 212, 0.64)
+                Items: =["","Jaya","Lucky","Roshan","Rohit","Jayesh","Ishan","Arihant"]
+                PaddingTop: =0
+                PressedFill: =RGBA(107, 31, 92, 0.63)
+                SelectionFill: =RGBA(107, 31, 92, 1)
+                Width: =Parent.Width-400
+                X: =193
+                Y: =581
+                ZIndex: =20
+
+            DepartmentDrop As dropdown:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                ChevronBackground: =RGBA(107, 31, 92, 1)
+                ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+                Default: =varDepartment
+                DisplayMode: =If(varStatus = "Closed",DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderThickness: =2
+                HoverFill: =RGBA(219, 184, 212, 0.64)
+                Items: =["","Human Resource","Administrator","Finance","IT","Recruitment Operations"]
+                PaddingTop: =0
+                PressedFill: =RGBA(107, 31, 92, 0.63)
+                SelectionFill: =RGBA(107, 31, 92, 1)
+                Width: =Parent.Width-400
+                X: =193
+                Y: =518
+                ZIndex: =21
+
+            PriorityDrop As dropdown:
+                BorderColor: =RGBA(107, 31, 92, 0.63)
+                ChevronBackground: =RGBA(107, 31, 92, 1)
+                ChevronHoverBackground: =RGBA(107, 31, 92, 1)
+                Default: =varPriority
+                DisplayMode: =If(varStatus = "Closed",DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderThickness: =2
+                HoverFill: =RGBA(219, 184, 212, 0.64)
+                Items: =["","Low","Medium","High"]
+                PaddingTop: =0
+                PressedFill: =RGBA(107, 31, 92, 0.63)
+                SelectionFill: =RGBA(107, 31, 92, 1)
+                Width: =Parent.Width-400
+                X: =193
+                Y: =456
+                ZIndex: =22
+
+            Button2 As button:
+                BorderThickness: =0
+                Fill: =RGBA(11, 158, 36, 1)
+                Height: =50
+                HoverFill: =
+                OnSelect: |
+                    =If(Ticket_StatusDrop.Selected.Value = "Closed",
+                    Patch(col_Tickets,LookUp(col_Tickets,ID = varID),
+                        {
+                            Priority: PriorityDrop.Selected.Value,
+                            Department: DepartmentDrop.Selected.Value,
+                            Status: Ticket_StatusDrop.Selected.Value,
+                            Assigned_To: AssignedToDrop.Selected.Value,
+                            Comment: Comment.Text
+                        }),
+                    Patch(col_Tickets,LookUp(col_Tickets,ID = varID),
+                        {
+                            Priority: PriorityDrop.Selected.Value,
+                            Department: DepartmentDrop.Selected.Value,
+                            Status: Ticket_StatusDrop.Selected.Value,
+                            Assigned_To: AssignedToDrop.Selected.Value,
+                            Comment: Comment.Text
+                        }
+                        )
+                    );
+                    Notify("Ticket has been Updated succesfully!",NotificationType.Success);
+                    Navigate(main_page,ScreenTransition.Fade)
+                PressedBorderColor: =RGBA(11, 158, 36, 1)
+                PressedColor: =RGBA(0, 0, 0, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: ="Save"
+                Visible: =If(varStatus = "Closed",false,true)
+                Width: =Parent.Width
+                Y: =638
+                ZIndex: =23
+
